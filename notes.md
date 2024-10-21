@@ -10,7 +10,7 @@
    * **Pytorch**
    * Another repo that used this same one (https://github.com/medical-images-process/CNN-Transformer?tab=readme-ov-file)
 
-## Github with tons of paper links 
+## Githubs with Tons of Paper Links 
 
 1. Links for 100 papers from 2012-2016 (too old?) "Awesome - Most Cited Deep Learning Papers" (https://github.com/terryum/awesome-deep-learning-papers)
 2. Source with more Deep Learning Papers on Medical Image Analysis (https://github.com/albarqouni/Deep-Learning-for-Medical-Applications/tree/master)
