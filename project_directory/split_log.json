@@ -1,0 +1,28 @@
+{
+    "training_data_ratio": 0.8,
+    "validation_data_ratio": 0.1,
+    "testing_data_ratio": 0.1,
+    "augmentation_params": {
+        "RandomMotion": {
+            "p": 0.3
+        },
+        "RandomBiasField": {
+            "p": 0.3
+        },
+        "RandomNoise": {
+            "p": 0.3,
+            "std": 0.03
+        },
+        "RandomElasticDeformation": {
+            "num_control_points": 5,
+            "max_displacement": 4,
+            "p": 0.2
+        },
+        "RandomFlip": {
+            "axes": [
+                0
+            ],
+            "p": 0.5
+        }
+    }
+}
