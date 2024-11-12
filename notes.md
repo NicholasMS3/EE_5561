@@ -1,4 +1,24 @@
-# Initial Notes and Links:
+# Implementation Notes and Links:
+
+## Dataset
+* We will use the SCGM challenge dataset located here: http://cmictig.cs.ucl.ac.uk/niftyweb/challenge/
+* Details regarding the challenge, the dataset, and the overall problem of spinal cord gray matter segmentation is described in this paper: https://www.sciencedirect.com/science/article/pii/S1053811917302185
+* This challenge consists of training and test data.
+*   The training data is comprised of 40 subjects, each with the original image and four separate masks created manually by medical experts. These masks are the "ground truth" for the training of our model.
+*   The test data is also comprised of 40 subjects, but only contains the original images because our code will generate the masks to be tested.
+* To test our output masks, we can upload them to this website and receive back how well it performs: http://niftyweb.cs.ucl.ac.uk/program.php?p=WMGM
+*   We may also calculate our own assessments, but we may have to use a different test dataset because they do not release the masks for the test data as far as I can tell.
+*   **Jordan To Do:** Look for more spinal cord datasets that could be used for analysis of model performance.
+
+## Augmentation
+* We will use augmentation to generate more training data. This should increase overall model accuracy and make the model more robust to common image quality issues seen during aquisitions such as noise, translations, rotations, and warping.
+* TorchIO will be used to generate the augmented training data.
+* One example where augmentation is used for skull segmentation is described in: https://dl.acm.org/doi/10.1007/978-3-030-64327-0_6
+* A more general description of augmentation for brain MRIs is found in: https://arxiv.org/abs/1902.09383
+* This is not just a straightforward application of the augmentations to the original training data given from the challenge. For each new training image generated, a valid mask must also be produced. This needs to be done automatically and with input from the original training data.
+*   **Jordan To Do:** Begin to experiment with this process (what types of augmentations to make, how to generate valid masks for new training data, how to use input data formats correctly for various slices).
+
+# Proposal Notes and Links:
 
 ## Other Github Ideas for Medical Imaging
 1. Pneumonia detection from X-ray images using **Tensor Flow** Convolution Neural Network (https://github.com/sanghvirajit/Medical-Image-Classification-using-CNN/tree/main)
@@ -28,6 +48,3 @@
 
 ## Datasets
 1. A big list (https://github.com/sfikas/medical-imaging-datasets)
-
-## Papers to keep
-
